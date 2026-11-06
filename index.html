@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Genesys Cloud Access Audit</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input {
+            width: 500px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-right: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #cccccc;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        #userCount {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .section {
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Genesys Cloud Access Audit Tool</h2>
+
+    <div class="section">
+        <label>Genesys Cloud Region</label><br>
+        <input id="region"
+               value="apse1.pure.cloud"
+               placeholder="apse1.pure.cloud">
+    </div>
+
+    <div class="section">
+        <label>Bearer Token</label><br>
+        <input id="token"
+               type="password"
+               placeholder="Paste OAuth Access Token">
+    </div>
+
+    <button id="loadBtn">
+        Load Data
+    </button>
+
+    <button id="exportBtn">
+        Export CSV
+    </button>
+
+    <br><br>
+
+    <input id="searchBox"
+           placeholder="Search Users, Roles, Groups, Division">
+
+    <div id="userCount">
+        Total Users: 0
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+    <th>No</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Division</th>
+    <th>Role Assignments</th>
+    <th>Groups</th>
+    <th>Permission Count</th>
+</tr>
+
+        </thead>
+
+        <tbody id="userTableBody">
+
+        </tbody>
+
+    </table>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
